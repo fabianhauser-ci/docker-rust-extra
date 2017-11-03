@@ -1,4 +1,4 @@
-FROM rust
+FROM rust:1.21
 
 ENV LC_ALL=C.UTF-8 LANG=C.UTF-8
 
