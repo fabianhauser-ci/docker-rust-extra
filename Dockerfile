@@ -1,6 +1,9 @@
 FROM rust
 
-ENV LC_ALL=C.UTF-8 LANG=C.UTF-8
+ENV RUSTUP_HOME=/usr/local/rustup \
+    CARGO_HOME=/usr/local/cargo \
+    LC_ALL=C.UTF-8 \
+    LANG=C.UTF-8
 
 RUN set -eux; \
     \
@@ -14,3 +17,5 @@ RUN set -eux; \
     \
     cargo install diesel_cli cargo-tarpaulin; \
     pip3 install pycobertura
+
+RUN chmod -R a+w $RUSTUP_HOME $CARGO_HOME;
